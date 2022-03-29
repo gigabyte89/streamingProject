@@ -1,7 +1,8 @@
 from django.contrib.auth.models import User
 from django.urls import include, path, reverse
 from rest_framework import status
-from rest_framework.test import APITestCase, URLPatternsTestCase
+from rest_framework.authtoken.models import Token
+from rest_framework.test import APIClient, APITestCase, URLPatternsTestCase
 
 from middleware import models
 
@@ -9,7 +10,9 @@ from middleware import models
 class Title(APITestCase):
 
     def setUp(self):
+        self.client = APIClient()
         self.user = User.objects.create_user(username="example", password="examp@123")
+        self.client.force_authenticate(user= self.user)
 
         # Create 2 titles
         self.title = models.Title.objects.create(title_name="Rescued by Ruby", tmdb_type="movie",
