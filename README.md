@@ -5,10 +5,13 @@ Hi! This demo Django project provides you a public REST API where you can get al
 The remote APIs used are:
 
  1. watchmode (https://api.watchmode.com/) 
-The watchmode APIs provides all the titles (Movies, TV Shows) currently available on Netflix.
+
+    The watchmode APIs provides all the titles (Movies, TV Shows) currently available on Netflix.
 
  3. IMDB (https://imdb-api.com/)
-The IMDB API fetches the details of a title such as rating, plot, runtime, etc.
+
+
+    The IMDB API fetches the details of a title such as rating, plot, runtime, etc.
 
 This demo project is mainly intended to demonstrate functionalities in Django such as but not limited to, class-based and function-based REST APIs, Models migration, saving & queries, Token Authentication, Serialization, Caching, Throttling, Parsers, Testing, Remote calls.
 
@@ -79,13 +82,20 @@ Each of the two apps(api, middleware) exposes a REST API listed below.
 These endpoints are intended to be used by the public or frontend user.
 
  1. Get all titles *(Token Auth needed)*
+
+
 GET `/api/titles`   
 
  2. Get all titles by year and/or type *(Token Auth needed)*
+
+
 GET `/api/titles/?year=2022&type=tv`
+
 GET `/api/titles/?year=2021&type=movie`
 
  3. Get title details (imdb) by id *(Token Auth needed)*
+
+
   GET `/middleware/titles/6708`
 
 ## **3.2 Middleware Endpoints**
@@ -93,12 +103,18 @@ GET `/api/titles/?year=2021&type=movie`
 These endpoints are *not* intended to be used by the public user, but *for the admin* to prefetch all the titles from the watchmode APIs.
 
  1. Get all titles 
+
+
 GET `/middleware/titles`   
 
  2. Get all titles by page number 
+
+
 GET `/middleware/titles/2`
 
  3. Get imdb title details by imdb id
+
+
   GET `/middleware/title/tt11278476`
 
 
