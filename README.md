@@ -13,7 +13,7 @@ The remote APIs used are:
 
     The IMDB API fetches the details of a title such as rating, plot, runtime, etc.
 
-This demo project is mainly intended for learning and to demonstrate functionalities in Django such as but not limited to, class-based and function-based REST APIs, Model usage, Token Authentication, Serialization, Caching, Throttling, Testing, Remote calls and parsing.
+This demo project is mainly intended for learning and to demonstrate functionalities in Django such as but not limited to: class-based and function-based REST APIs, Model usage, Token Authentication, Serialization, Caching, Throttling, Testing, Remote calls and parsing.
 
 # 1. How it works?
 
