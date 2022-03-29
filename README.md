@@ -74,6 +74,11 @@ POST`/api/token/`
 { 'token' : 'f79f3f88b7a3cbb80f7f3f04e2b91da5c31085ff' }
 ```
 
+To use Auth protected endpoints pass the following in Request Header: 
+```
+Authorization: Token f79f3f88b7a3cbb80f7f3f04e2b91da5c31085ff
+```
+
 # 3. Endpoints
 Each of the two apps(api, middleware) exposes a REST API listed below. 
 
