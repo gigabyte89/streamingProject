@@ -10,7 +10,7 @@ The watchmode APIs provides all the titles (Movies, TV Shows) currently availabl
  3. IMDB (https://imdb-api.com/)
 The IMDB API fetches the details of a title such as rating, plot, runtime, etc.
 
-This demo project is mainly intended to demonstrate functionalities in Django such as but not limited to, class-based and function-based REST APIs, Models migration, saving & queries, Serialization, Caching, Throttling, Parsers, Testing, Remote calls.
+This demo project is mainly intended to demonstrate functionalities in Django such as but not limited to, class-based and function-based REST APIs, Models migration, saving & queries, Token Authentication, Serialization, Caching, Throttling, Parsers, Testing, Remote calls.
 
 # 1. How it works?
 
@@ -50,20 +50,42 @@ There are two models as follows:
  1. Title (**id**, tmdb_type, year, type, title_name, imdb_id)
  2. Imdb (**id**,  *title_id*, runtimeStr, plot, release_date, directors, imdb_rating, trailer, image)
 
+# 3. Authorization
+ 
+All the **/api/** endpoints are protected by a Token Authorization Header.
+
+There is an endpoint which can be used to get the token:
+
+This endpoint will return a JSON response when valid `username` and `password` fields are POSTed using form data or JSON.
+
+I have created a demo user:
+
+**Request:**
+
+POST`/api/token/`
+
+    username:demo_user
+    password:demo@123
+
+**Response:**
+```
+{ 'token' : 'f79f3f88b7a3cbb80f7f3f04e2b91da5c31085ff' }
+```
+
 # 3. Endpoints
 Each of the two apps(api, middleware) exposes a REST API listed below. 
 
 ## 3.1 API Endpoints
 These endpoints are intended to be used by the public or frontend user.
 
- 1. Get all titles 
+ 1. Get all titles *(Token Auth needed)*
 GET `/api/titles`   
 
- 2. Get all titles by year and/or type
+ 2. Get all titles by year and/or type *(Token Auth needed)*
 GET `/api/titles/?year=2022&type=tv`
 GET `/api/titles/?year=2021&type=movie`
 
- 3. Get title details (imdb) by id
+ 3. Get title details (imdb) by id *(Token Auth needed)*
   GET `/middleware/titles/6708`
 
 ## **3.2 Middleware Endpoints**
@@ -84,3 +106,4 @@ GET `/middleware/titles/2`
 This project can be run locally on a local development server as follows:
 
     $ python manage.py runserver
+
