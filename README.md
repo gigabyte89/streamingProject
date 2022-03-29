@@ -41,10 +41,9 @@ Its main purpose is to query the database to fetch all the titles and titles' de
 
 Note that I call the middleware in case the *title details* is missing to fetch them from imdb.
 
-I have *intentionally* not called the middleware to get all titles from watchmode  (if it the db is empty) because it takes time to fetch all of them from the remote APIs. It is better to manually call the API - GET `/middleware/titles` first.
-However, in this GitHub repo, I have already included a populated db.sqlite3 file, so no need to call it.
+I have *intentionally* not called the middleware to get all titles from watchmode  (if it the db is empty) because it takes time to fetch all of them from the remote APIs. It is better to manually call the API - GET `/middleware/titles` first to populate the DB.
 
-In production most likely the APIs will be called periodically to refresh the Titles in the db (it can be controlled by caching remote api calls and response every 5 mins for eg)
+However, in production, most likely the APIs will be called periodically to refresh the Titles in the db (it can be controlled by caching remote api calls and response every 5 mins for eg). However, in this GitHub repo, I have already included a populated db.sqlite3 file, so no need to call it.
 
 # 2. Database storage details
 
