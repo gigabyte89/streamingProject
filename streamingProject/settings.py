@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_rename_app',
     'rest_framework',
+    'rest_framework.authtoken',
     # Apps
     'middleware', 'api',
 ]
@@ -135,6 +136,9 @@ CACHES = {
 }
 
 REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
 
     'DEFAULT_THROTTLE_RATES': {
         'anon': '100/day',
