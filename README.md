@@ -1,6 +1,6 @@
 # Welcome to Netflix Catalogue
 
-Hi! This demo Django project provides you a public REST API where you can get all the Netflix titles currently available and it also fetches details on a title from IMDB.com.
+Hi! This demo Django project provides you with a public REST API where you can get all the Netflix titles currently available and it also fetches title's details from IMDB.com.
 
 The remote APIs used are:
 
@@ -13,7 +13,7 @@ The remote APIs used are:
 
     The IMDB API fetches the details of a title such as rating, plot, runtime, etc.
 
-This demo project is mainly intended to demonstrate functionalities in Django such as but not limited to, class-based and function-based REST APIs, Models migration, saving & queries, Token Authentication, Serialization, Caching, Throttling, Parsers, Testing, Remote calls.
+This demo project is mainly intended to demonstrate functionalities in Django such as but not limited to, class-based and function-based REST APIs, Models migration, saving & queries, Token Authentication, Serialization, Caching, Throttling, Testing, Remote calls and parsing.
 
 # 1. How it works?
 
@@ -117,8 +117,12 @@ GET `/middleware/titles/2`
 
   GET `/middleware/title/tt11278476`
 
+## 4. How to run the test cases?
 
-## 4. How to run the project?
+All the unit test cases can be run at  api/tests.py.
+It tests all the endpoints for correct results and also test cases of bad request (invalid imdb IDs).
+
+## 5. How to run the project?
 This project can be run locally on a local development server as follows:
 
     $ python manage.py runserver
