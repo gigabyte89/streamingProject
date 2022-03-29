@@ -2,6 +2,14 @@
 
 Hi! This demo Django project provides you a public REST API where you can get all the Netflix titles currently available and it also fetches details on a title from IMDB.com.
 
+The remote APIs used are:
+
+ 1. watchmode (https://api.watchmode.com/) 
+The watchmode APIs provides all the titles (Movies, TV Shows) currently available on Netflix.
+
+ 3. IMDB (https://imdb-api.com/)
+The IMDB API fetches the details of a title such as rating, plot, runtime, etc.
+
 This demo project is mainly intended to demonstrate functionalities in Django such as but not limited to, class-based and function-based REST APIs, Models migration, saving & queries, Serialization, Caching, Throttling, Parsers, Testing, Remote calls.
 
 # 1. How it works?
@@ -21,13 +29,7 @@ Since the remote APIs have limits on the number of calls we can make, I decided 
 
 Additionally, this layer has result caching enabled on both APIs to speed up the response time. 
 
-The remote APIs used are:
 
- 1. watchmode (https://api.watchmode.com/) 
-The watchmode APIs provides all the titles (Movies, TV Shows) currently available on Netflix.
-
- 3. IMDB (https://imdb-api.com/)
-The IMDB API fetches the details of a title such as rating, plot, runtime, etc.
 
 ## **1.2 api**
 This app exposes 3 endpoints which the user/frontend application can call. I have enabled throttling to limit the call rate.
